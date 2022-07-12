@@ -7,7 +7,7 @@ function computerPlay() {
             return 'paper';
         case 2:
             return 'scisscors';
-       
+
     }
 }
 
@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (playerSelection.toLowerCase() === "paper") {
         if (computerPlay === "paper") {
-            return "no one won you both rock"
+            return "no one won you both paper"
         }
         else if (computerPlay === "scisscors") {
             return "You Lose! scisscors beats paper";
@@ -36,9 +36,23 @@ function playRound(playerSelection, computerSelection) {
             return "You wind! scissors beats paper"
         }
         else if (computerPlay === "scisscors") {
-            return "no one won you both rock";
+            return "no one won you both scisscors";
         } else {
             return "You Lose! rock beats scisscors";
         }
+    }
+}
+
+// const playerSelection = 'rock'
+// const computerSelection = computerPlay()
+
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("what's your selection?")
+        let computerSelection = computerPlay()
+        console.log(`your selection is ${playerSelection}
+        computer selection is ${computerSelection}`);
+        console.log(playRound(playerSelection, computerSelection));
     }
 }
