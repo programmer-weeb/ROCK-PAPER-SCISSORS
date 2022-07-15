@@ -12,7 +12,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection == playerSelection.toLowerCase()) {
+    if (computerSelection === playerSelection.toLowerCase()) {
         console.log("Tie game!");
     }
     if (playerSelection.toLowerCase() === "rock") {
@@ -56,4 +56,4 @@ computer selection is ${computerSelection}`);
     }
 }
 
-game()
+game();
