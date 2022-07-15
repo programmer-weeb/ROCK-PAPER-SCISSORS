@@ -1,3 +1,6 @@
+const resultDiv = document.getElementById('#resultDiv')
+
+
 function computerPlay() {
     const rand = Math.floor(Math.random() * 3)
     switch (rand) {
@@ -64,10 +67,15 @@ computer choose ${computerSelection}
 function game(playerSelection) {
 
     let computerSelection = computerPlay();
-    console.log(`your selection is ${playerSelection}
-computer selection is ${computerSelection}`);
-    console.log(playRound(playerSelection, computerSelection));
+    /* console.log(`your selection is ${playerSelection}
+computer selection is ${computerSelection}`); */
+    // console.log(playRound(playerSelection, computerSelection));
     // return playRound(playerSelection, computerSelection);
+    return (
+        `your selection is ${playerSelection}
+        computer selection is ${computerSelection}
+        ${playRound(playerSelection, computerSelection)}`
+    )
 }
 
 // DOM manipulation
@@ -82,14 +90,32 @@ let paperButton = document.querySelector("#paper")
 let scissorsButton = document.querySelector("#scissors")
 
 rockButton.addEventListener('click', () => {
-    game("rock")
+    // game("rock")
+    // resultDiv.textContent = `${game("rock")}`;
+    // resultDiv.innerHTML = "sdsdds"
+    // resultDiv.appendChild(resultDiv)
+    // resultDiv.appendChild(p)
+
+    let p = document.createElement('p')
+    p.innerText = `${game("rock")}`;
+
+    document.body.appendChild(p)
 })
 paperButton.addEventListener('click', () => {
-    game("paper")
+    // game("paper")
+    let p = document.createElement('p')
+    p.innerText = `${game("paper")}`;
+    document.body.appendChild(p)
+
 });
 scissorsButton.addEventListener('click', () => {
-    game("scissors")
+    // game("scissors")
+    let p = document.createElement('p')
+    p.innerText = `${game("scissors")}`;
+    document.body.appendChild(p)
+
 });
+
 
 
 
